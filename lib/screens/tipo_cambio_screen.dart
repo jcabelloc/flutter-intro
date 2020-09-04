@@ -57,9 +57,12 @@ class _TipoCambioScreenState extends State<TipoCambioScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Image.asset(
-                'imgs/dollar.png',
-                height: 100,
+              Hero(
+                tag: 'dollar',
+                child: Image.asset(
+                  'imgs/dollar.png',
+                  height: 100,
+                ),
               ),
               SizedBox(
                 height: 64,
