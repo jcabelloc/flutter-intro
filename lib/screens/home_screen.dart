@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tipo_cambio_app/screens/tipo_cambio_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -33,14 +34,21 @@ class HomeScreen extends StatelessWidget {
               ),
               RaisedButton(
                 child: Text(
-                  'Consulta',
+                  'Ingresa',
                   style: TextStyle(
                     color: Colors.white,
                   ),
                 ),
                 color: Colors.lightBlueAccent,
-                onPressed: () {},
-              )
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TipoCambioScreen(),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),
