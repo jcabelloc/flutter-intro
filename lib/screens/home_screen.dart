@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:tipo_cambio_app/components/mi_boton.dart';
 import 'package:tipo_cambio_app/screens/tipo_cambio_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -56,15 +57,9 @@ class HomeScreen extends StatelessWidget {
                 height: 36,
                 width: double.infinity,
               ),
-              RaisedButton(
-                child: Text(
-                  'Ingresa',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                color: Colors.lightBlueAccent,
-                onPressed: () {
+              MiBoton(
+                texto: 'Ingresar',
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(

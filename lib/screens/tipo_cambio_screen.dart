@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tipo_cambio_app/components/mi_boton.dart';
+import 'package:tipo_cambio_app/screens/home_screen.dart';
 import 'package:tipo_cambio_app/services/sunat_service.dart';
 
 class TipoCambioScreen extends StatefulWidget {
@@ -84,16 +86,7 @@ class _TipoCambioScreenState extends State<TipoCambioScreen> {
               SizedBox(
                 height: 16,
               ),
-              RaisedButton(
-                child: Text(
-                  'Consultar',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                color: Colors.lightBlueAccent,
-                onPressed: traerTipoCambio,
-              ),
+              MiBoton(texto: 'Consultar', onTap: traerTipoCambio),
               SizedBox(
                 height: 16,
               ),
