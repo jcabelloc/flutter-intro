@@ -1,7 +1,8 @@
 # tipo_cambio_app
 
 Aplicacion para obtener el tipo de cambio desde Sunat
-[Presentacion relacionada](https://docs.google.com/presentation/d/10358JVRgK2vdMFfs_S-TY4L6WbZ3VoSySbN_pt_kxbA/edit?usp=sharing)
+
+[Presentacion de Introduccion a Flutter](https://docs.google.com/presentation/d/10358JVRgK2vdMFfs_S-TY4L6WbZ3VoSySbN_pt_kxbA/edit?usp=sharing)
 
 ## Getting Started
 
