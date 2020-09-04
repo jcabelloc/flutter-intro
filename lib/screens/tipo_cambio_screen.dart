@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tipo_cambio_app/services/sunat_service.dart';
 
 class TipoCambioScreen extends StatefulWidget {
   @override
@@ -10,8 +11,24 @@ class _TipoCambioScreenState extends State<TipoCambioScreen> {
   DateTime selectedDate = DateTime.now();
   String tipoCambioCompra;
   String tipoCambioVenta;
+  SunatService _sunatService = new SunatService();
 
   String selectedDateAsString;
+
+  @override
+  void initState() {
+    super.initState();
+    //traerTipoCambio();
+  }
+
+  void traerTipoCambio() async {
+    var tc = await _sunatService.getTipoCambio(selectedDateAsString);
+    print('Data obtenida al cargar pantalla: $tc');
+    setState(() {
+      tipoCambioCompra = tc.compra;
+      tipoCambioVenta = tc.venta;
+    });
+  }
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
@@ -72,7 +89,7 @@ class _TipoCambioScreenState extends State<TipoCambioScreen> {
                   ),
                 ),
                 color: Colors.lightBlueAccent,
-                onPressed: () {},
+                onPressed: traerTipoCambio,
               ),
               SizedBox(
                 height: 16,
@@ -80,7 +97,10 @@ class _TipoCambioScreenState extends State<TipoCambioScreen> {
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Text('Compra: ' + (tipoCambioCompra ?? '')),
+                  child: Text(
+                    'Compra: ' + (tipoCambioCompra ?? ''),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
               SizedBox(
@@ -89,7 +109,10 @@ class _TipoCambioScreenState extends State<TipoCambioScreen> {
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Text('Venta: ' + (tipoCambioVenta ?? '')),
+                  child: Text(
+                    'Venta: ' + (tipoCambioVenta ?? ''),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
             ],
